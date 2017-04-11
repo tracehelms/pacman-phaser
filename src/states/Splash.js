@@ -10,10 +10,11 @@ export default class extends Phaser.State {
     centerGameObjects([this.loaderBg, this.loaderBar])
 
     this.load.setPreloadSprite(this.loaderBar)
-    //
+
     // load your assets
-    //
-    this.load.image('mushroom', 'assets/images/mushroom2.png')
+    this.load.tilemap('level', 'assets/tilemaps/pacman_tilemap.json', null, Phaser.Tilemap.TILED_JSON);
+    this.load.image('pacman_tiles', 'assets/images/pacman_tiles.png');
+    this.load.spritesheet('pacman', 'assets/sprites/pacman_sprite.png', 32, 32);
   }
 
   create () {
